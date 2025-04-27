@@ -1,0 +1,260 @@
+@import 'variables';
+@import 'mixins';  
+
+
+* {
+    font-family: $font-primary;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    @include breakpoint(tablet) {
+        background-color: $blue-700;
+        margin: 80px 70px 80px 70px;
+    }
+
+    @include breakpoint(desktop) {
+        margin: 220px 270px 220px 270px;
+    }
+}  
+
+
+.container {
+    
+    @include breakpoint(tablet) {
+        background-color: white;
+        border-radius: 36px;
+        padding: 40px;
+        box-shadow: 0 0 0 20px rgba(36, 39, 66, 0.3);
+    }
+
+    @include breakpoint(desktop) {
+        padding: 24px 32px;
+        box-shadow: 0 0 0 30px rgba(36, 39, 66, 0.3);
+    }
+}
+
+
+.pagina_principal {
+    @include breakpoint(desktop) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+
+.imagen {
+    display: flex;
+    justify-content: center;   
+    
+    
+    .mobile {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            border-radius: 16px;
+        }
+
+        @include breakpoint(desktop) {
+            display: none;
+        }
+    }  
+
+    .desktop {
+        display: none;
+        
+        @include breakpoint(tablet) {
+            display: none;
+        }
+
+        @include breakpoint(desktop) {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+   
+
+.main {  
+    margin: 40px 24px 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include breakpoint(tablet) {
+        margin-bottom: 30px;
+    }
+
+    @include breakpoint(desktop) {
+        margin-left: 0;
+    }
+
+    &_title {
+        color: $blue-800;
+        
+    }
+
+    &_description {
+        color: $blue-800;
+        margin: 0;
+
+        @include breakpoint(desktop) {
+            font-size: 18px;
+        }
+    }
+
+    &_list {
+        color: $blue-800;
+        margin: 0;
+        list-style: none;
+        padding-left: 40px;
+
+        @include breakpoint(tablet) {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        @include breakpoint(desktop) {
+            font-size: 18px;
+        }
+
+        li {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                background-image: url(../assets/images/icon-list.svg);
+                background-repeat: no-repeat;
+                background-position: left center;
+                top: 12px;
+                right: 105%;
+                transform: translateY(-50%);
+                width: 21px; /* tamaño de tu imagen */
+                height: 21px;
+
+            }            
+        }
+    }
+}
+
+
+.email {
+    margin: 0px 24px 44px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include breakpoint(tablet) {
+        margin-bottom: 0px;
+    }
+
+    @include breakpoint(desktop) {
+        margin-left: 0;
+    }
+
+    &_form{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &-input {
+            padding: 16px;
+            border: 1px solid $grey;
+            border-radius: 8px;
+        }
+
+        .error {
+            box-shadow: 0 0 0 1000px #f4c4c0 inset !important;
+            -webkit-text-fill-color: $red !important;
+            -webkit-text-fill-color: $red !important;
+            border: 1px solid $red;
+        }
+    }
+
+    &_info {
+        display: flex;   
+        justify-content: space-between;
+
+        #error {
+            color: $red;
+        }
+    }
+
+
+    .button {
+        @include button-azul;  
+
+        &:hover {
+            @include button-rosa;
+        }
+    }
+}
+
+
+.message {
+    display: none;
+    flex-direction: column;
+    gap: 32px;
+    margin: 100px 24px 70px 24px;
+    background-color: white;
+
+    @include breakpoint(tablet) {
+        height: 100%;
+        margin: 60px;
+        padding: 60px 64px;
+        border-radius: 36px;
+        box-shadow: 0 0 0 20px rgba(36, 39, 66, 0.3);
+    }
+
+    @include breakpoint(desktop) {
+        width: 500px;
+        margin: 0;
+        position: relative;
+        left: 20%;
+        box-shadow: 0 0 0 30px rgba(36, 39, 66, 0.3);
+    }
+
+    img {
+        width: 64px;
+        height: 64px;
+    }
+
+    &_title {
+        color: $blue-800;
+
+        @include breakpoint(tablet) {
+            font-size: 60px;
+        }
+    }
+
+    &_description {
+        color: $blue-800;
+
+        @include breakpoint(tablet) {
+            font-size: 18px;
+        }
+
+        span {
+            font-weight: bold;
+        }   
+    }
+
+    .button {
+        @include button-azul;
+        margin-top: 80px;
+
+        @include breakpoint(tablet) {
+            margin-top: 0;
+        }
+
+        &:hover {
+            @include button-rosa;
+        }
+
+    }
+}

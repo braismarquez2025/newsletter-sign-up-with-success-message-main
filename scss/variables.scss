@@ -1,0 +1,48 @@
+@import 'mixins';
+
+// Colores
+$grey: #949494;
+$blue-800: #242742;
+$blue-700: #36384d;
+$red: #FF6155;
+$gradient: linear-gradient(90deg,rgba(255, 106, 58, 1) 0%, rgba(255, 82, 123, 1) 50%);
+
+// Tipografia
+$font-primary: "Roboto", sans-serif;
+
+// Tamaños de pantalla
+$bp-tablet: 768px;
+$bp-desktop: 1440px;
+
+
+.text-preset-1 {
+    font-size: 42px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    font-weight: 700;
+
+    @include breakpoint(tablet) {
+        font-size: 56px;
+    }
+}
+
+.text-preset-2-bold {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-weight: 700;
+}
+
+.text-preset-2-regular {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.text-preset-3 {
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0px; 
+    font-weight: 700;
+}

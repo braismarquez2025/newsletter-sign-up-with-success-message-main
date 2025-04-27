@@ -1,0 +1,33 @@
+@mixin button-azul {
+    padding: 16px;
+    background-color: $blue-800;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+@mixin button-rosa {
+    padding: 16px;
+    background: $gradient;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 20px 20px rgb(255, 97, 85, 0.5); 
+    cursor: pointer;
+}
+
+
+@mixin breakpoint($bp) {
+    @if $bp == tablet {
+      @media (min-width: $bp-tablet) {
+        @content;
+      }
+    }
+  
+    @if $bp == desktop {
+      @media (min-width: $bp-desktop) {
+        @content;
+      }
+    }
+}
