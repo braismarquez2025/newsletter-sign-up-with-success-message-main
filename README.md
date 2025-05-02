@@ -1,4 +1,4 @@
-# Frontend Mentor - Solución de componentes de código QR
+# Frontend Mentor - Solución de suscripción al boletín informativo con mensaje de éxito
 
 Esta es una solución al [desafío de suscripción al boletín informativo con mensaje de éxito en Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). Los desafíos de Frontend Mentor te ayudan a mejorar tus habilidades de programación creando proyectos realistas.
 
